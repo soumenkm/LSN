@@ -231,22 +231,6 @@ if __name__ == "__main__":
         "is_zero_shot": bool(args.is_zero_shot),
         "intervene_by": args.intervene_by
     }
-    # ckpt_path = "/raid/speech/soumen/MS_Research/LangSpecificNeurons/outputs/ckpt/Meta-Llama-3.1-8B_finetune_XQUAD-FT/lape/set1/en_finetune_null_1.00_5.0e-05_r64"
-    # ckpt_id = 1160
-    # eval_lang = "vi"
-    # is_zero_shot = False
-    # intervene_by = "mean_p5_act"
-    # method = "lape/set1"
-    # config = {
-    #     "config_path": Path(Path.cwd(), f"{ckpt_path}/master_config.pkl"),
-    #     "method": method,
-    #     "ckpt_name": f"checkpoint-{ckpt_id}/pytorch_model.bin",
-    #     "eval_lang": eval_lang,
-    #     "batch_size": 1,
-    #     "eval_frac": 0.1,
-    #     "is_zero_shot": is_zero_shot,
-    #     "intervene_by": intervene_by
-    # }
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using {device}...")
     main(config=config, device=device)
